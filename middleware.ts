@@ -1,6 +1,8 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
-export default clerkMiddleware();
+export default clerkMiddleware({
+  publicRoutes: ['/api/uploadthing']
+});
 
 export const config = {
   matcher: [
@@ -10,3 +12,4 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 };
+
